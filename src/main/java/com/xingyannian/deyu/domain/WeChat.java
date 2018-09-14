@@ -1,8 +1,6 @@
-package com.xingyannian.deyu.entity;
+package com.xingyannian.deyu.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by XINGYANNIAN on 2018/9/9.
@@ -11,6 +9,7 @@ import javax.persistence.Table;
 @Table(name = "dy_wechat")
 public class WeChat {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String openId;
     private Long studentId;
