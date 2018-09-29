@@ -19,7 +19,6 @@ public class loginController {
         if(code == null){
             return "forward:/login";
         }else {
-
             return "redirect:https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx1043e0e52faa7e3c&secret=b776bf9bb33abf17a35f39ee9642c041&code=" + code +"&grant_type=authorization_code";
         }
     }
