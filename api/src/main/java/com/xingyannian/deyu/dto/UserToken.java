@@ -8,9 +8,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserToken {
     private String access_token;
-    private Integer expires_in;
-    private String oprnid;
-    private Integer errcode;
+    private String openid;
+    private Integer errcode = 0;
     private String errmsg;
 
     public String getAccess_token() {
@@ -21,20 +20,12 @@ public class UserToken {
         this.access_token = access_token;
     }
 
-    public Integer getExpires_in() {
-        return expires_in;
+    public String getOpenid() {
+        return openid;
     }
 
-    public void setExpires_in(Integer expires_in) {
-        this.expires_in = expires_in;
-    }
-
-    public String getOprnid() {
-        return oprnid;
-    }
-
-    public void setOprnid(String oprnid) {
-        this.oprnid = oprnid;
+    public void setOpenid(String openid) {
+        this.openid = openid;
     }
 
     public Integer getErrcode() {
