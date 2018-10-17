@@ -7,4 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Created by XINGYANNIAN on 2018/10/8.
  */
 public interface WeChatRepository extends JpaRepository<WeChat,Long> {
+    Boolean existsByOpenId(String openid);
+    WeChat findByOpenId(String openid);
 }

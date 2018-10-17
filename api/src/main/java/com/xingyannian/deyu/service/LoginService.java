@@ -7,5 +7,6 @@ import com.xingyannian.deyu.domain.WeChat;
  */
 public interface LoginService {
     public String getOpenid(String code);
+    public WeChat getWeChat(String openid);
 
 }

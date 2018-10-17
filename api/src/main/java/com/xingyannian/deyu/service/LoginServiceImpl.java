@@ -1,6 +1,7 @@
 package com.xingyannian.deyu.service;
 
 import com.xingyannian.deyu.config.WxMappingJackson2HttpMessageConverter;
+import com.xingyannian.deyu.domain.WeChat;
 import com.xingyannian.deyu.dto.UserToken;
 import com.xingyannian.deyu.repository.WeChatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,18 @@ public class LoginServiceImpl implements LoginService {
                 //获取成功
                 System.out.println(userToken.getOpenid());
                 return userToken.getOpenid();
+            }
+        }
+    }
+    @Override
+    public WeChat getWeChat(String openid){
+        if (openid == null){
+            return null;
+        }else {
+            if(weChatRepository.existsByOpenId(openid)){
+                return weChatRepository.findByOpenId(openid);
+            }else {
+                return null;
             }
         }
     }

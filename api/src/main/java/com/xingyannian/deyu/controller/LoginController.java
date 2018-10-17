@@ -1,5 +1,6 @@
 package com.xingyannian.deyu.controller;
 
+import com.xingyannian.deyu.domain.WeChat;
 import com.xingyannian.deyu.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,7 +31,12 @@ public class LoginController {
             //将openid存入session
             String openid =  loginService.getOpenid(code);
             session.setAttribute("openid",openid);
-            model.addAttribute("openid",openid);
+            WeChat weChat = loginService.getWeChat(openid);
+            if (weChat == null){
+                return "forward:/register";
+            }else {
+
+            }
             return "index";
         }
     }
